@@ -1,6 +1,20 @@
 <h1>Editing Subject</h1>
 
-<%= render 'form', subject: @subject %>
+<%= form_for @subject, :html => {:multipart => true}, remote: true do |form| %>
+ 
+  <div class="field">
+    <%= form.label :name %><br>
+    <%= form.text_field :name, id: :subject_name %>
+  </div>
 
+  <div class="field">
+    <%= form.label :description %><br>
+    <%= form.text_area :description, id: :subject_description %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
 <%= link_to 'Show', @subject %> |
 <%= link_to 'Back', subjects_path %>
