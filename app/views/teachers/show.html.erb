@@ -1,39 +1,40 @@
 <h1> Teacher's Profile </h1>
 <p id="notice"><%= notice %></p>
-<p>
-  <strong>Profile_pic:</strong>
-  <%= image_tag current_teacher.avatar, :class =>"style_image" %>
-</p>
-<p>
-  <strong>First_name:</strong>
-  <%= current_teacher.first_name %>
-</p>
+<table class="table table-striped">
+  <tr>
+    <td>
+      <strong>Profile_pic:</strong>
+      <%= image_tag current_teacher.avatar, :class =>"style_image" %>
+    </td>
+    <td>
+      <strong>First_name:</strong>
+      <%= current_teacher.first_name %>
+    </td>
 
-<p>
-  <strong>Last_name:</strong>
-  <%= current_teacher.last_name %>
-</p>
-<p>
-  <strong>Email:</strong>
-  <%= current_teacher.email %>
-</p>
-<p>
-  <strong>Contact:</strong>
-  <%= current_teacher.contact %>
-</p>
-<p>
-  <strong>Address:</strong>
-  <%= current_teacher.address %>
-</p>
-
-
-<p>
-  <strong>Subjects:</strong>
-  <% @subjects.each do |subject| %><br>
-        <td><%= subject.name %></td>
-  <% end %>
- </p>
-
+    <td>
+      <strong>Last_name:</strong>
+      <%= current_teacher.last_name %>
+    </td>
+    <td>
+      <strong>Email:</strong>
+      <%= current_teacher.email %>
+    </td>
+    <td>
+      <strong>Contact:</strong>
+      <%= current_teacher.contact %>
+    </td>
+    <td>
+      <strong>Address:</strong>
+      <%= current_teacher.address %>
+    </td>
+    <td>
+      <strong>Subjects:</strong>
+      <% @subjects.each do |subject| %></br>
+      <%= subject.name %>
+      <% end %>
+    </td>
+  </tr>
+</table>
 <!-- Trigger the modal with a button -->
 <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Add Skills</button>
 
