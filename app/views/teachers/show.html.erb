@@ -1,0 +1,61 @@
+<h1> Teacher's Profile </h1>
+<p id="notice"><%= notice %></p>
+<p>
+  <strong>Profile_pic:</strong>
+  <%= image_tag current_teacher.avatar, :class =>"style_image" %>
+</p>
+<p>
+  <strong>First_name:</strong>
+  <%= current_teacher.first_name %>
+</p>
+
+<p>
+  <strong>Last_name:</strong>
+  <%= current_teacher.last_name %>
+</p>
+<p>
+  <strong>Email:</strong>
+  <%= current_teacher.email %>
+</p>
+<p>
+  <strong>Contact:</strong>
+  <%= current_teacher.contact %>
+</p>
+<p>
+  <strong>Address:</strong>
+  <%= current_teacher.address %>
+</p>
+
+
+<p>
+  <strong>Subjects:</strong>
+  <% @subjects.each do |subject| %><br>
+        <td><%= subject.name %></td>
+  <% end %>
+ </p>
+
+<!-- Trigger the modal with a button -->
+<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Add Skills</button>
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">New Subject</h4>
+      </div>
+      <div class="modal-body">
+        <%= render 'subjects/form' %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+  

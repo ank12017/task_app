@@ -1,0 +1,16 @@
+<%= form_for Subject.new,:html => {:multipart => true}, remote: true do |form| %>
+ 
+  <div class="field">
+    <%= form.label :name %><br>
+    <%= form.text_field :name, id: :subject_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %><br>
+    <%= form.text_area :description, id: :subject_description %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
